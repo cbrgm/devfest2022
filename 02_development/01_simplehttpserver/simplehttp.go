@@ -13,6 +13,8 @@ func HelloServer(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	fmt.Println("please connect to localhost:7777/hello")
+	// adding our function to an endpoint
 	http.HandleFunc("/hello", HelloServer)
+	// starting the server
 	log.Fatal(http.ListenAndServe(":7777", nil))
 }
